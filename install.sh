@@ -21,7 +21,7 @@ sudo eopkg up || error "Error. The script couldn't update your system."
 echo "###########################################################"
 echo "## Installing the Packages. This may take a few minutes. ##"
 echo "###########################################################"
-sudo eopkg it dmenu git neofetch i3 dunst vim i3status i3lock feh flameshot picom light font-awesome-4 arandr fish zsh micro iw || error "Error: We couldn't download the packages."
+sudo eopkg it dmenu git rofi neofetch i3 dunst vim i3status i3lock feh flameshot picom light font-awesome-4 arandr fish zsh micro iw || error "Error: We couldn't download the packages."
 sudo pip3 install bumblebee-status netifaces || error "Error: We couldn't download some packages."
 
 clear
