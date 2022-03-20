@@ -52,6 +52,25 @@ cd /etc/
 sudo wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/i3status.conf || error "We couldn't download one of the config files"
 clear
 
+cd /home/$USER/.config/
+mkdir fish
+cd fish
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/fish/fish_variables
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/fish/config.fish
+mkdir functions
+cd functions
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/fish/functions/fish_prompt.fish
+wget https://github.com/Jocadbz/dotfiles/blob/main/fish/functions/fish_right_prompt.fish
+
+cd /home/$USER/
+mkdir .SpaceVim.d
+cd .SpaceVim.d/
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/SpaceVim.d/init.toml
+
+cd /home/$USER/Imagens/
+mkdir wallpapers
+cd wallpapers/
+wget https://nordthemewallpapers.com/Backgrounds/All/img/spacemars.jpg
 
 echo "################################################################"
 echo "##                    Installing SpaceVim                     ##"
@@ -71,7 +90,7 @@ sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
 sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
 sudo cp colorscript.sh /usr/bin/colorscript
 clear
-chsh -s /bin/zsh
+chsh -s /usr/bin/fish
 
 
 
