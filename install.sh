@@ -72,6 +72,10 @@ mkdir wallpapers
 cd wallpapers/
 wget https://nordthemewallpapers.com/Backgrounds/All/img/spacemars.jpg
 
+cd /usr/bin/
+sudo wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/i3-auto-layout
+sudo chmod +x i3-auto-layout
+
 echo "################################################################"
 echo "##                    Installing SpaceVim                     ##"
 echo "################################################################"
