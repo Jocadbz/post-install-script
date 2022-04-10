@@ -21,8 +21,7 @@ sudo eopkg up || error "Error. The script couldn't update your system."
 echo "###########################################################"
 echo "## Installing the Packages. This may take a few minutes. ##"
 echo "###########################################################"
-sudo eopkg it dmenu git rofi neofetch i3 dunst vim i3status i3lock feh flameshot picom light font-awesome-4 arandr fish zsh micro iw || error "Error: We couldn't download the packages."
-sudo pip3 install bumblebee-status netifaces || error "Error: We couldn't download some packages."
+sudo eopkg it dmenu git rofi neofetch i3 dunst vim i3status i3lock feh flameshot picom light arandr fish zsh micro iw || error "Error: We couldn't download the packages."
 
 clear
 
@@ -32,57 +31,42 @@ echo "################################################################"
 
 mkdir /home/$USER/.config/alacritty/
 cd /home/$USER/.config/alacritty/
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/alacritty/alacritty.yml || error "We couldn't download one of the config files"
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/alacritty/alacritty.yml || error "We couldn't download one of the config files"
 
 mkdir /home/$USER/.config/dunst/
 cd /home/$USER/.config/dunst/
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/dunst/dunstrc || error "We couldn't download one of the config files"
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/dunst/dunstrc || error "We couldn't download one of the config files"
 
 mkdir /home/$USER/.config/i3/
 cd /home/$USER/.config/i3/
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/i3/config || error "We couldn't download one of the config files"
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/i3/config || error "We couldn't download one of the config files"
 
 cd /home/$USER/
 wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/.zshrc || error "We couldn't download one of the config files"
 
 cd /home/$USER/.config/
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/picom.conf || error "We couldn't download one of the config files"
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/picom.conf || error "We couldn't download one of the config files"
 
-cd /etc/
-sudo wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/i3status.conf || error "We couldn't download one of the config files"
+mkdir /home/$USER/.config/i3status/
+cd /home/$USER/.config/i3status/
+sudo wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/i3status/config || error "We couldn't download one of the config files"
 clear
 
 cd /home/$USER/.config/
 mkdir fish
 cd fish
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/fish/fish_variables
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/fish/config.fish
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/fish/fish_variables
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/fish/config.fish
 mkdir functions
 cd functions
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/fish/functions/fish_prompt.fish
-wget https://github.com/Jocadbz/dotfiles/blob/main/fish/functions/fish_right_prompt.fish
-
-cd /home/$USER/
-mkdir .SpaceVim.d
-cd .SpaceVim.d/
-wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/SpaceVim.d/init.toml
+wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/config/fish/functions/fish_prompt.fish
+wget https://github.com/Jocadbz/dotfiles/blob/main/config/fish/functions/fish_right_prompt.fish
 
 cd /home/$USER/Imagens/
 mkdir wallpapers
 cd wallpapers/
 wget https://nordthemewallpapers.com/Backgrounds/All/img/spacemars.jpg
 
-cd /usr/bin/
-sudo wget https://raw.githubusercontent.com/Jocadbz/dotfiles/main/i3-auto-layout
-sudo chmod +x i3-auto-layout
-
-echo "################################################################"
-echo "##                    Installing SpaceVim                     ##"
-echo "################################################################"
-wait 2
-cd /home/$USER/
-curl -sLf https://spacevim.org/install.sh | bash
-clear
 
 echo "################################################################"
 echo "##   Installing extra packages and executing extra commands   ##"
